@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Employee Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Employee Registration Form</h1>
+        <div class="wrapper">
+            <form>
+                <label for="name" id="name">Name - </label>
+                <input placeholder="Name" name="name" />
+                <br />
+                <label for="email">Email - </label>
+                <input placeholder="Email" name="email" />
+                <br />
+                <label for="mobile">Mobile Number - </label>
+                <input placeholder="Mobile Number" name="mobile" type="text"/>
+                <br />
+                <label for="gender">Gender - </label>
+                <!-- <input placeholder="Gender" name="gender" type="text"/> -->
+                <select name="gender" id="gender">
+                    <option value="no"></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select>
+                <br />
+                <label for="qualification">Qualification - </label>
+                <input placeholder="Qualification" name="qualification" type="text"/>
+                <br />
+                <label for="prevexp"> Years of Experience in Previous Company - </label>
+                <input placeholder="in Years" name="prevexp" type="number"/>
+                <br />
+                <label for="currentexp">Years of Experience in Current Company - </label>
+                <input placeholder="in Years" name="currentexp" type="number" id="current"/>
+                <br />
+                <label for="doj">Date of Joining - </label>
+                <input placeholder="DD-MM-YYYY" name="doj" type="date" id="doj"/>
+                <br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Gender</th>
+                    <th>Qualification</th>
+                    <th>Experience(P)</th>
+                    <th>Experience(C)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <p class="years"></p>
+        <script src="app.js"></script>
+    </body>
+</html>
