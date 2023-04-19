@@ -2,6 +2,8 @@ const renderTable = (d) => {
     const tbody = document.querySelector("tbody");
     let rawHtml = "";
     d.forEach((item, i) => {
+        let year = 2023 - item.doj;
+
         rawHtml += `
             <tr>
                 <td>${i + 1}</td>
@@ -13,6 +15,7 @@ const renderTable = (d) => {
                 <td>${item.prevexp}</td>
                 <td>${item.currentexp}</td>
                 <td>${item.doj}</td>
+                <p>The number of experience gained in this particular company is ${year}</p>
             </tr>
         `;
     });

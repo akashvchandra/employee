@@ -1,7 +1,8 @@
 body {
     text-align: center;
     border: 1px solid black;
-    margin: 2% 400px;
+    margin: 2% 300px;
+    background-color: floralwhite;
 }
 h1 {
     margin-bottom: 50px;
@@ -15,7 +16,6 @@ td {
 
 table {
     margin: 30px auto;
-    max-width: 300px;
 }
 
 input,
