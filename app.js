@@ -12,6 +12,7 @@ const renderTable = (d) => {
                 <td>${item.qualification}</td>
                 <td>${item.prevexp}</td>
                 <td>${item.currentexp}</td>
+                <td>${item.doj}</td>
             </tr>
         `;
     });

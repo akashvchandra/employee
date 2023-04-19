@@ -20,13 +20,13 @@ const validateEmail = (email) => {
 };
 
 app.post("/", async (req, res) => {
-    const { name, email, mobile, gender, qualification, prevexp, currentexp } = req.body;
+    const { name, email, mobile, gender, qualification, prevexp, currentexp, doj } = req.body;
     if (!validateEmail(email)) {
         res.json({ error: "Please enter a valid email" });
         return;
     }
     try {
-        const newForm = await pool.query("INSERT INTO users (name, email, mobile, gender, qualification, prevexp, currentexp) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id", [
+        const newForm = await pool.query("INSERT INTO users (name, email, mobile, gender, qualification, prevexp, currentexp, doj) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id", [
             name,
             email,
             mobile,
@@ -34,6 +34,7 @@ app.post("/", async (req, res) => {
             qualification,
             prevexp,
             currentexp,
+            doj,
         ]);
         console.log(newForm);
         res.json(newForm.rows[0]);
@@ -45,7 +46,7 @@ app.post("/", async (req, res) => {
 
 app.get("/", async (req, res) => {
     try {
-        const allForms = await pool.query("SELECT name, email, id, mobile, gender, qualification, prevexp, currentexp FROM users");
+        const allForms = await pool.query("SELECT name, email, id, mobile, gender, qualification, prevexp, currentexp, doj FROM users");
         res.json(allForms.rows);
     } catch (err) {
         console.error(err.message);
